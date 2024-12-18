@@ -80,6 +80,7 @@ if wilayah:
     if opd_terpilih:
         df3 = df2[df2['Produsen Data'] == opd_terpilih]
         st.dataframe(df3, use_container_width=True, hide_index=True)
+        st.caption('Sumber: https://opendata.jabarprov.go.id/id/dataset')
        
 st.subheader("", divider='green')
 with st.expander('BAHAN PEMBAHASAN FORUM SATU DATA UNTUK MENGIDENTIFIKASI KEGIATAN STATISTIK SEKTORAL:'):

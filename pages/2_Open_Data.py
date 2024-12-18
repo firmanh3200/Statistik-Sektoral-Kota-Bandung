@@ -102,6 +102,7 @@ if opd_terpilih:
     df3 = df3.sort_values(by='Data yang Dihasilkan')
     
     st.dataframe(df3, use_container_width=True, hide_index=True)
+    st.caption('Sumber: https://opendata.bandung.go.id/dataset')
        
 st.subheader("", divider='green')
 with st.expander('BAHAN PEMBAHASAN FORUM SATU DATA UNTUK MENGIDENTIFIKASI KEGIATAN STATISTIK SEKTORAL:'):
