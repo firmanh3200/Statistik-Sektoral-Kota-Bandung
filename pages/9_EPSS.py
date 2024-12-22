@@ -7,6 +7,7 @@ kematangan = pd.read_excel('data/kematangan.xlsx')
 st.set_page_config(layout='wide')
 
 st.subheader('Evaluasi Penyelenggaraan Statistik Sektoral', divider='rainbow')
+st.warning('Sumber: https://drive.google.com/file/d/1B37k_35MENcx6MQ5UWmnV-EleC-derH0/view?usp=sharing')
 
 with st.expander('TINGKAT KEMATANGAN'):
     st.success(':red[RINTISAN]:  penyelenggaraan statistik sektoral dilakukan \
