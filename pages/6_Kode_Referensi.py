@@ -36,5 +36,7 @@ if st.button("Buka Tautan"):
     url = pilihan[selected_option]
     st.markdown(f'<a href="{url}" target="_blank">Klik di sini untuk membuka Kode Referensi Kategori {selected_option}</a>', unsafe_allow_html=True)
 
+st.warning('Baca Pedoman: https://drive.google.com/file/d/1B37k_35MENcx6MQ5UWmnV-EleC-derH0/view?usp=sharing')
+
 st.divider()
 st.write('@Forum Satu Data Kota Bandung')
