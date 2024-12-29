@@ -55,6 +55,16 @@ while True:
 
 # Mengonversi data ke DataFrame pandas
 df = pd.DataFrame(all_data)
+df = df[df['organisasi_name'] != 'Badan Pusat Statistik Kota Bandung']
+df = df[df['organisasi_name'] != 'Badan Meteorologi dan Geofisika']
+df = df[df['organisasi_name'] != 'Kementrian Agama Kota Bandung']
+df = df[df['organisasi_name'] != 'Otoritas Jasa Keuangan']
+df = df[df['organisasi_name'] != 'Palang Merah Indonesia']
+df = df[df['organisasi_name'] != 'Pengadilan Agama Bandung']
+df = df[df['organisasi_name'] != 'Pengadilan Militer II-09 Bandung']
+df = df[df['organisasi_name'] != 'Pengadilan Negeri Bandung']
+df = df[df['organisasi_name'] != 'Pengadilan Tata Usaha Negara Bandung']
+df = df[df['organisasi_name'] != 'Perusahaan Listrik Negara']
 
 # Menampilkan semua baris data
 pd.set_option('display.max_rows', None)
@@ -94,6 +104,9 @@ opd = df2['organisasi_name'].unique()
 df2 = df2.rename(columns={'name':'Data yang Dihasilkan', 'organisasi_name':'Produsen Data'})
 
 st.subheader("", divider='rainbow')
+st.success('Statistik sektoral adalah statistik yang pemanfaatannya ditujukan untuk memenuhi \
+            kebutuhan instansi tertentu dalam rangka penyelenggaraan tugas-tugas pemerintahan \
+                dan pembangunan yang merupakan tugas pokok instansi yang bersangkutan.')
 
 opd_terpilih = st.selectbox('Filter Produsen Data', opd)
 
@@ -117,19 +130,30 @@ df3 = pd.DataFrame(extracted_data)
 if opd_terpilih:
     df3 = df3[df3['organisasi_name'] == opd_terpilih]
     df3 = df3.sort_values(by='name')
-    df3 = df3.rename(columns={'name':'Output', 'Dimensi Dataset Awal':'data_awal',
+    df3 = df3.rename(columns={'name':'Output Data/ Indikator', 'Dimensi Dataset Awal':'data_awal',
                               'Dimensi Dataset Akhir':'data_akhir', 'organisasi_name':'Produsen Data'})
     
     st.dataframe(df3, use_container_width=True, hide_index=True)
     st.caption('Sumber: https://opendata.bandung.go.id/dataset')
     
-    with st.expander('Daftar Metadata Statistik pada ROMANTIK dan INDAH'):
+    with st.expander(f'Daftar Metadata Statistik {opd_terpilih} Kota Bandung pada SIRUSA'):
         # Embed URL in an iframe
         iframe_code = f"""
         <iframe src="https://sirusa.web.bps.go.id/metadata/site/search?SearchForm%5Bkategori%5D=&SearchForm%5Bkeyword%5D={opd_terpilih}+Kota+Bandung" width="100%" height="600" style="border:none;"></iframe>
         """
 
         st.markdown(iframe_code, unsafe_allow_html=True)
+        st.caption(f'Sumber: https://sirusa.web.bps.go.id/metadata/site/search?SearchForm%5Bkategori%5D=&SearchForm%5Bkeyword%5D={opd_terpilih}+Kota+Bandung')
+    
+    #st.divider()    
+    with st.expander(f'Contoh Metadata Statistik {opd_terpilih} di Pemerintah Daerah lain'):
+        # Embed URL in an iframe
+        iframe_code = f"""
+        <iframe src="https://sirusa.web.bps.go.id/metadata/site/search?SearchForm%5Bkategori%5D=&SearchForm%5Bkeyword%5D={opd_terpilih}" width="100%" height="600" style="border:none;"></iframe>
+        """
+
+        st.markdown(iframe_code, unsafe_allow_html=True)
+        st.caption(f'Sumber: https://sirusa.web.bps.go.id/metadata/site/search?SearchForm%5Bkategori%5D=&SearchForm%5Bkeyword%5D={opd_terpilih}')
 
 st.subheader("", divider='green')
 with st.expander('BAHAN PEMBAHASAN FORUM SATU DATA UNTUK MENGIDENTIFIKASI KEGIATAN STATISTIK SEKTORAL:'):
