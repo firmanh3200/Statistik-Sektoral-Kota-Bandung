@@ -123,3 +123,64 @@ with st.expander('STATISTIK NASIONAL'):
     penjelasan = lke5['Penjelasan Indikator'].to_list()
     st.success('Penjelasan Indikator')
     st.write(penjelasan)
+    
+st.subheader('', divider='rainbow')
+
+st.success('Kota Magelang meraih Predikat Terbaik 1 Nasional (Nilai IPS Tertinggi) Tahun 2024')
+with st.expander('RANCANGAN KEGIATAN STATISTIK SEKTORAL KOTA MAGELANG'):
+    iframe_code = f"""
+    <iframe src="https://romantik.web.bps.go.id/rekomendasi-terbit?search=kota+magelang&instansi=0" width="100%" height="600" style="border:none;"></iframe>
+    """
+
+    st.markdown(iframe_code, unsafe_allow_html=True)
+    st.caption(f'Sumber: https://romantik.web.bps.go.id/rekomendasi-terbit?search=kota+magelang&instansi=0')
+
+with st.expander('METADATA STATISTIK SEKTORAL KOTA MAGELANG'):
+    iframe_code = f"""
+    <iframe src="https://sirusa.web.bps.go.id/metadata/site/search?SearchForm%5Bkategori%5D=&SearchForm%5Bkeyword%5D=kota+magelang" width="100%" height="600" style="border:none;"></iframe>
+    """
+
+    st.markdown(iframe_code, unsafe_allow_html=True)
+    st.caption(f'Sumber: https://sirusa.web.bps.go.id/metadata/site/search?SearchForm%5Bkategori%5D=&SearchForm%5Bkeyword%5D=kota+magelang')
+
+st.subheader('', divider='rainbow')
+
+st.warning('Kota Malang meraih Predikat Terbaik 1 Nasional (Nilai IPS Tertinggi) Tahun 2023')
+with st.expander('RANCANGAN KEGIATAN STATISTIK SEKTORAL KOTA MALANG'):
+    iframe_code = f"""
+    <iframe src="https://romantik.web.bps.go.id/rekomendasi-terbit?search=kota+malang&instansi=0" width="100%" height="600" style="border:none;"></iframe>
+    """
+
+    st.markdown(iframe_code, unsafe_allow_html=True)
+    st.caption(f'Sumber: https://romantik.web.bps.go.id/rekomendasi-terbit?search=kota+malang&instansi=0')
+
+with st.expander('METADATA STATISTIK SEKTORAL KOTA MALANG'):
+    iframe_code = f"""
+    <iframe src="https://sirusa.web.bps.go.id/metadata/site/search?SearchForm%5Bkategori%5D=&SearchForm%5Bkeyword%5D=kota+malang" width="100%" height="600" style="border:none;"></iframe>
+    """
+
+    st.markdown(iframe_code, unsafe_allow_html=True)
+    st.caption(f'Sumber: https://sirusa.web.bps.go.id/metadata/site/search?SearchForm%5Bkategori%5D=&SearchForm%5Bkeyword%5D=kota+malang')
+
+st.subheader('', divider='rainbow')
+
+st.info('Kabupaten Sumedang meraih Predikat Terbaik Jawa Barat')
+with st.expander('RANCANGAN KEGIATAN STATISTIK SEKTORAL KABUPATEN SUMEDANG'):
+    iframe_code = f"""
+    <iframe src="https://romantik.web.bps.go.id/rekomendasi-terbit?search=sumedang&instansi=0" width="100%" height="600" style="border:none;"></iframe>
+    """
+
+    st.markdown(iframe_code, unsafe_allow_html=True)
+    st.caption(f'Sumber: https://romantik.web.bps.go.id/rekomendasi-terbit?search=sumedang&instansi=0')
+
+with st.expander('METADATA STATISTIK SEKTORAL KABUPATEN SUMEDANG'):
+    iframe_code = f"""
+    <iframe src="https://sirusa.web.bps.go.id/metadata/site/search?SearchForm%5Bkategori%5D=&SearchForm%5Bkeyword%5D=sumedang" width="100%" height="600" style="border:none;"></iframe>
+    """
+
+    st.markdown(iframe_code, unsafe_allow_html=True)
+    st.caption(f'Sumber: https://sirusa.web.bps.go.id/metadata/site/search?SearchForm%5Bkategori%5D=&SearchForm%5Bkeyword%5D=sumedang')
+
+
+st.divider()
+st.write('@Forum Satu Data Kota Bandung')
