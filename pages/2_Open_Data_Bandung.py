@@ -72,11 +72,6 @@ pd.set_option('display.max_rows', None)
 kolom_dipakai = ['organisasi_name', 'metadata', 'name']
 
 df2 = df.copy()
-non_opd = ['Otoritas Jasa Keuangan', 'Palang Merah Indonesia', 'Kementrian Agama Kota Bandung',
-            'Perusahaan Listrik Negara', 'Pengadilan Agama Bandung', 'Pengadilan Negeri Bandung',
-            'Pengadilan Tata Usaha Negara Bandung', 'Pengadilan Militer II-09 Bandung',
-            'Badan Meteorologi dan Geofisika', 'Perusahaan Daerah Air Minum Tirtawening',
-            'Badan Pusat Statistik Kota Bandung']
 
 # df2['organisasi_name'] != non_opd
 
@@ -155,6 +150,17 @@ if opd_terpilih:
         st.markdown(iframe_code, unsafe_allow_html=True)
         st.caption(f'Sumber: https://sirusa.web.bps.go.id/metadata/site/search?SearchForm%5Bkategori%5D=&SearchForm%5Bkeyword%5D={opd_terpilih}')
 
+    with st.expander(f'Contoh Rancangan Kegiatan Statistik {opd_terpilih} di Pemerintah Daerah lain'):
+        st.success(f'Contoh Rancangan Kegiatan {opd_terpilih} selindo')
+        # Embed URL in an iframe
+        iframe_code = f"""
+        <iframe src="https://romantik.web.bps.go.id/rekomendasi-terbit?search={opd_terpilih}" width="100%" height="600" style="border:none;"></iframe>
+        """
+
+        st.markdown(iframe_code, unsafe_allow_html=True)
+        st.caption(f'Sumber: https://romantik.web.bps.go.id/rekomendasi-terbit?search={opd_terpilih}')
+
+    
 st.subheader("", divider='green')
 with st.expander('BAHAN PEMBAHASAN FORUM SATU DATA UNTUK MENGIDENTIFIKASI KEGIATAN STATISTIK SEKTORAL:'):
     st.success('Data-data tersebut dihasilkan dari Bidang?')
