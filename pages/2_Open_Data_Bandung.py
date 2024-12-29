@@ -59,7 +59,7 @@ df = pd.DataFrame(all_data)
 # Menampilkan semua baris data
 pd.set_option('display.max_rows', None)
 
-kolom_dipakai = ['organisasi_name', 'name']
+kolom_dipakai = ['organisasi_name', 'metadata', 'name']
 
 df2 = df.copy()
 non_opd = ['Otoritas Jasa Keuangan', 'Palang Merah Indonesia', 'Kementrian Agama Kota Bandung',
@@ -97,14 +97,40 @@ st.subheader("", divider='rainbow')
 
 opd_terpilih = st.selectbox('Filter Produsen Data', opd)
 
+# Ekstrak data yang diperlukan
+extracted_data = []
+for item in all_data:
+    name = item["name"]
+    dimensi_awal = next((meta["value"] for meta in item["metadata"] if meta["key"] == "Dimensi Dataset Awal"), None)
+    dimensi_akhir = next((meta["value"] for meta in item["metadata"] if meta["key"] == "Dimensi Dataset Akhir"), None)
+    organisasi_name = item["organisasi_name"]
+    extracted_data.append({
+        "name": name,
+        "Dimensi Dataset Awal": dimensi_awal,
+        "Dimensi Dataset Akhir": dimensi_akhir,
+        "organisasi_name": organisasi_name
+    })
+
+# Buat DataFrame
+df3 = pd.DataFrame(extracted_data)
+
 if opd_terpilih:
-    df3 = df2[df2['Produsen Data'] == opd_terpilih]
-    df3 = df3.sort_values(by='Data yang Dihasilkan')
+    df3 = df3[df3['organisasi_name'] == opd_terpilih]
+    df3 = df3.sort_values(by='name')
+    df3 = df3.rename(columns={'name':'Output', 'Dimensi Dataset Awal':'data_awal',
+                              'Dimensi Dataset Akhir':'data_akhir', 'organisasi_name':'Produsen Data'})
     
     st.dataframe(df3, use_container_width=True, hide_index=True)
     st.caption('Sumber: https://opendata.bandung.go.id/dataset')
     
-       
+    with st.expander('Daftar Metadata Statistik pada ROMANTIK dan INDAH'):
+        # Embed URL in an iframe
+        iframe_code = f"""
+        <iframe src="https://sirusa.web.bps.go.id/metadata/site/search?SearchForm%5Bkategori%5D=&SearchForm%5Bkeyword%5D={opd_terpilih}+Kota+Bandung" width="100%" height="600" style="border:none;"></iframe>
+        """
+
+        st.markdown(iframe_code, unsafe_allow_html=True)
+
 st.subheader("", divider='green')
 with st.expander('BAHAN PEMBAHASAN FORUM SATU DATA UNTUK MENGIDENTIFIKASI KEGIATAN STATISTIK SEKTORAL:'):
     st.success('Data-data tersebut dihasilkan dari Bidang?')
