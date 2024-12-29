@@ -86,6 +86,12 @@ with st.expander('dapat dibagipakaikan antar Sistem Elektronik \
 st.subheader('', divider='green')
 st.subheader('Standar Interoperabilitas Data')
 lid = pd.read_excel('data/standarlid.xlsx')
-st.table(lid)
+kategori = lid['Keterangan'].unique()
+
+terpilih = st.selectbox('Pilih Kategori', kategori)
+if terpilih:
+    st.warning(f'{terpilih}')
+    tabel = lid[lid['Keterangan'] == terpilih]
+    st.table(tabel)
 
 st.caption('Selengkapnya: https://drive.google.com/file/d/1IUTVm2H3VvthBQnLLxksEXUV7pTkR1QS/view?usp=sharing')
