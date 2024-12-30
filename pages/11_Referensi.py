@@ -39,8 +39,13 @@ st.write('19.	Peraturan Walikota Bandung Nomor 1407 Tahun 2016 tentang Kedudukan
 st.write('20. Peraturan Daerah Kota Bandung Nomor 3 Tahun 2021 tentang Perubahan \
     Atas Peraturan Daerah Kota Bandung Nomor 8 Tahun 2016 Tentang Pembentukan \
         Dan Susunan Perangkat Daerah Kota Bandung')
-st.write('Keputusan Menteri Perdagangan Nomor 1544 Tahun 2024 tentang Pedoman Penyelenggaraan \
+st.write('21. Keputusan Menteri Perdagangan Nomor 1544 Tahun 2024 tentang Pedoman Penyelenggaraan \
     Statistik Sektoral di Kementerian Perdagangan')
-st.write('Petunjuk Pelaksanaan dan Petunjuk Teknis Penyelenggaraan Statistik Sektoral Kabupaten Ciamis')
-st.write('Pedoman Penyelenggaraan Statistik Sektoral Kementerian Pariwisata dan Ekonomi Kreatif')
-st.write('Pedoman Penyelenggaraan Statistik Sektoral di Lingkup Pemerintah Kota Malang')
+st.write('22. Petunjuk Pelaksanaan dan Petunjuk Teknis Penyelenggaraan Statistik Sektoral Kabupaten Ciamis')
+st.write('23. Pedoman Penyelenggaraan Statistik Sektoral Kementerian Pariwisata dan Ekonomi Kreatif')
+st.write('24. Pedoman Penyelenggaraan Statistik Sektoral di Lingkup Pemerintah Kota Malang')
+st.write('25. Pedoman Penyelenggaraan Statistik Sektoral di Lingkungan Lembaga Kebijakan Pengadaan \
+    Barang/Jasa Pemerintah')
+st.write('26. Pedoman Penyelenggaraan Statistik Lingkungan Hidup dan Kehutanan')
+st.write('27. Panduan Operasional Penghimpunan dan Pengelolaan Metadata Kegiatan Statistik Sektoral/Khusus. \
+    https://drive.google.com/file/d/13EmZR8Z9Tp3yEa71iTZKz-KSrE9bKtFr/view?usp=sharing')
