@@ -9,6 +9,7 @@ st.subheader('METADATA STATISTIK', divider='rainbow')
 st.subheader('Metadata Kegiatan Statistik')
 st.success('Sekumpulan atribut informasi yang memberikan gambaran / dokumentasi \
             dari penyelenggaraan kegiatan statistik')
+st.caption('Baca Panduan: https://drive.google.com/file/d/13EmZR8Z9Tp3yEa71iTZKz-KSrE9bKtFr/view?usp=sharing')
 
 with st.expander('Judul Kegiatan'):
     st.info('Judul kegiatan minimal memuat cara pengumpulan data, komponen utama \
