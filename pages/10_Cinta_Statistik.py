@@ -512,3 +512,287 @@ if __name__ == '__main__':
     lainnya()
     
 st.subheader('', divider='rainbow')
+
+
+kabterpilih5 = 3273
+kec5 = mendagri[mendagri['kodekab'] == kabterpilih5]['kodekec'].unique()
+
+
+def prodeskel():
+    st.warning('PRODESKEL KEMENDAGRI')
+    tahun = ['2024', '2023', '2022', '2021', '2020', '2019', '2025', '2026', '2027']
+    
+    kol1, kol2 = st.columns(2)
+    with kol1:
+        tahunterpilih = st.selectbox('Filter Tahun Laporan', tahun)
+    with kol2:
+        kecterpilih5 = st.selectbox('Filter Kode Kecamatan Kemendagri', kec5, key='kec5')
+
+    if tahunterpilih and kecterpilih5:
+        
+        with st.expander("Sarana Prasarana"):
+            url2 = f"https://e-prodeskel.kemendagri.go.id/api/d/{tahunterpilih}/data-integrasi-level/10?kode_daerah={kecterpilih5}"
+
+            tables = pd.read_html(url2)
+
+            df = tables[0]
+            df = df.drop(columns=df.filter(like='STATUS PEMERITAHAN').columns)
+            df = df.drop(columns=df.filter(like='KOTA').columns)
+            df = df.drop(columns=df.filter(like='NAMA KECAMATAN').columns)
+            
+            st.dataframe(df, hide_index=True, use_container_width=True)
+            
+        with st.expander("Pendidikan Penduduk"):
+            url2 = f"https://e-prodeskel.kemendagri.go.id/api/d/{tahunterpilih}/data-integrasi-level/2?kode_daerah={kecterpilih5}"
+
+            # Fetch data based on selected code
+            tables = pd.read_html(url2)
+
+            df = tables[0]
+            
+            df = df.drop(columns=df.filter(like='STATUS PEMERITAHAN').columns)
+            df = df.drop(columns=df.filter(like='KOTA').columns)
+            df = df.drop(columns=df.filter(like='NAMA KECAMATAN').columns)
+            
+            st.dataframe(df, hide_index=True, use_container_width=True)    
+        
+        with st.expander("Keluarga Sejahtera"):
+            url2 = f"https://e-prodeskel.kemendagri.go.id/api/d/{tahunterpilih}/data-integrasi-level/6?kode_daerah={kecterpilih5}"
+
+            # Fetch data based on selected code
+            tables = pd.read_html(url2)
+
+            df = tables[0]
+            
+            df = df.drop(columns=df.filter(like='STATUS PEMERITAHAN').columns)
+            df = df.drop(columns=df.filter(like='KOTA').columns)
+            df = df.drop(columns=df.filter(like='NAMA KECAMATAN').columns)
+            
+            st.dataframe(df, hide_index=True, use_container_width=True)  
+        
+        with st.expander("Lembaga Kemasyarakatan"):
+            url2 = f"https://e-prodeskel.kemendagri.go.id/api/d/{tahunterpilih}/data-integrasi-level/7?kode_daerah={kecterpilih5}"
+
+            # Fetch data based on selected code
+            tables = pd.read_html(url2)
+
+            df = tables[0]
+            
+            df = df.drop(columns=df.filter(like='STATUS PEMERITAHAN').columns)
+            df = df.drop(columns=df.filter(like='KOTA').columns)
+            df = df.drop(columns=df.filter(like='NAMA KECAMATAN').columns)
+            
+            st.dataframe(df, hide_index=True, use_container_width=True)      
+                    
+        with st.expander("Musrenbang"):
+            url2 = f"https://e-prodeskel.kemendagri.go.id/api/d/{tahunterpilih}/data-integrasi-level/8?kode_daerah={kecterpilih5}"
+
+            # Fetch data based on selected code
+            tables = pd.read_html(url2)
+
+            df = tables[0]
+            
+            df = df.drop(columns=df.filter(like='STATUS PEMERITAHAN').columns)
+            df = df.drop(columns=df.filter(like='KOTA').columns)
+            df = df.drop(columns=df.filter(like='NAMA KECAMATAN').columns)
+            
+            st.dataframe(df, hide_index=True, use_container_width=True)      
+        
+        with st.expander("Posyandu"):
+            url2 = f"https://e-prodeskel.kemendagri.go.id/api/d/{tahunterpilih}/data-integrasi-level/9?kode_daerah={kecterpilih5}"
+
+            # Fetch data based on selected code
+            tables = pd.read_html(url2)
+
+            df = tables[0]
+            
+            df = df.drop(columns=df.filter(like='STATUS PEMERITAHAN').columns)
+            df = df.drop(columns=df.filter(like='KOTA').columns)
+            df = df.drop(columns=df.filter(like='NAMA KECAMATAN').columns)
+            
+            st.dataframe(df, hide_index=True, use_container_width=True)
+            
+        with st.expander("Potensi Iklim"):
+            url2 = f"https://e-prodeskel.kemendagri.go.id/api/d/{tahunterpilih}/data-integrasi-level/11?kode_daerah={kecterpilih5}"
+
+            # Fetch data based on selected code
+            tables = pd.read_html(url2)
+
+            df = tables[0]
+            
+            df = df.drop(columns=df.filter(like='STATUS PEMERITAHAN').columns)
+            df = df.drop(columns=df.filter(like='KOTA').columns)
+            df = df.drop(columns=df.filter(like='NAMA KECAMATAN').columns)
+            
+            st.dataframe(df, hide_index=True, use_container_width=True)    
+        
+        with st.expander("Sawah"):
+            url2 = f"https://e-prodeskel.kemendagri.go.id/api/d/{tahunterpilih}/data-integrasi-level/12?kode_daerah={kecterpilih5}"
+
+            # Fetch data based on selected code
+            tables = pd.read_html(url2)
+
+            df = tables[0]
+            
+            df = df.drop(columns=df.filter(like='STATUS PEMERITAHAN').columns)
+            df = df.drop(columns=df.filter(like='KOTA').columns)
+            df = df.drop(columns=df.filter(like='NAMA KECAMATAN').columns)
+            
+            st.dataframe(df, hide_index=True, use_container_width=True)      
+
+        with st.expander("Penduduk"):
+            url2 = f"https://e-prodeskel.kemendagri.go.id/api/d/{tahunterpilih}/data-integrasi-level/13?kode_daerah={kecterpilih5}"
+
+            # Fetch data based on selected code
+            tables = pd.read_html(url2)
+
+            df = tables[0]
+            
+            tabel = pd.DataFrame(df)
+            st.dataframe(tabel, hide_index=True, use_container_width=True)        
+        
+        with st.expander("Lahan Hutan"):
+            url2 = f"https://e-prodeskel.kemendagri.go.id/api/d/{tahunterpilih}/data-integrasi-level/14?kode_daerah={kecterpilih5}"
+
+            # Fetch data based on selected code
+            tables = pd.read_html(url2)
+
+            df = tables[0]
+            
+            df = df.drop(columns=df.filter(like='STATUS PEMERITAHAN').columns)
+            df = df.drop(columns=df.filter(like='KOTA').columns)
+            df = df.drop(columns=df.filter(like='NAMA KECAMATAN').columns)
+            
+            st.dataframe(df, hide_index=True, use_container_width=True)    
+        
+        with st.expander("Lahan Perkebunan"):
+            url2 = f"https://e-prodeskel.kemendagri.go.id/api/d/{tahunterpilih}/data-integrasi-level/15?kode_daerah={kecterpilih5}"
+
+            # Fetch data based on selected code
+            tables = pd.read_html(url2)
+
+            df = tables[0]
+            
+            df = df.drop(columns=df.filter(like='STATUS PEMERITAHAN').columns)
+            df = df.drop(columns=df.filter(like='KOTA').columns)
+            df = df.drop(columns=df.filter(like='NAMA KECAMATAN').columns)
+            
+            st.dataframe(df, hide_index=True, use_container_width=True)     
+
+        with st.expander("Lahan Pertanian"):
+            url2 = f"https://e-prodeskel.kemendagri.go.id/api/d/{tahunterpilih}/data-integrasi-level/16?kode_daerah={kecterpilih5}"
+
+            # Fetch data based on selected code
+            tables = pd.read_html(url2)
+
+            df = tables[0]
+            
+            df = df.drop(columns=df.filter(like='STATUS PEMERITAHAN').columns)
+            df = df.drop(columns=df.filter(like='KOTA').columns)
+            df = df.drop(columns=df.filter(like='NAMA KECAMATAN').columns)
+            
+            st.dataframe(df, hide_index=True, use_container_width=True)    
+        
+        with st.expander("Luas Wilayah"):
+            url2 = f"https://e-prodeskel.kemendagri.go.id/api/d/{tahunterpilih}/data-integrasi-level/19?kode_daerah={kecterpilih5}"
+
+            # Fetch data based on selected code
+            tables = pd.read_html(url2)
+
+            df = tables[0]
+            
+            df = df.drop(columns=df.filter(like='STATUS PEMERITAHAN').columns)
+            df = df.drop(columns=df.filter(like='KOTA').columns)
+            df = df.drop(columns=df.filter(like='NAMA KECAMATAN').columns)
+            
+            st.dataframe(df, hide_index=True, use_container_width=True)
+        
+        with st.expander("Prasarana Keagamaan"):
+            url2 = f"https://e-prodeskel.kemendagri.go.id/api/d/{tahunterpilih}/data-integrasi-level/20?kode_daerah={kecterpilih5}"
+
+            # Fetch data based on selected code
+            tables = pd.read_html(url2)
+
+            df = tables[0]
+            
+            df = df.drop(columns=df.filter(like='STATUS PEMERITAHAN').columns)
+            df = df.drop(columns=df.filter(like='KOTA').columns)
+            df = df.drop(columns=df.filter(like='NAMA KECAMATAN').columns)
+            
+            st.dataframe(df, hide_index=True, use_container_width=True)   
+        
+        with st.expander("Pendidikan Perangkat Desa"):
+            url2 = f"https://e-prodeskel.kemendagri.go.id/api/d/{tahunterpilih}/data-integrasi-level/21?kode_daerah={kecterpilih5}"
+
+            # Fetch data based on selected code
+            tables = pd.read_html(url2)
+
+            df = tables[0]
+            
+            df = df.drop(columns=df.filter(like='STATUS PEMERITAHAN').columns)
+            df = df.drop(columns=df.filter(like='KOTA').columns)
+            df = df.drop(columns=df.filter(like='NAMA KECAMATAN').columns)
+            
+            st.dataframe(df, hide_index=True, use_container_width=True)  
+        
+        with st.expander("Air Bersih"):
+            url2 = f"https://e-prodeskel.kemendagri.go.id/api/d/{tahunterpilih}/data-integrasi-level/22?kode_daerah={kecterpilih5}"
+
+            # Fetch data based on selected code
+            tables = pd.read_html(url2)
+
+            df = tables[0]
+            
+            df = df.drop(columns=df.filter(like='STATUS PEMERITAHAN').columns)
+            df = df.drop(columns=df.filter(like='KOTA').columns)
+            df = df.drop(columns=df.filter(like='NAMA KECAMATAN').columns)
+            
+            st.dataframe(df, hide_index=True, use_container_width=True)
+        
+        with st.expander("Kesehatan"):
+            url2 = f"https://e-prodeskel.kemendagri.go.id/api/d/{tahunterpilih}/data-integrasi-level/23?kode_daerah={kecterpilih5}"
+
+            # Fetch data based on selected code
+            tables = pd.read_html(url2)
+
+            df = tables[0]
+            
+            df = df.drop(columns=df.filter(like='STATUS PEMERITAHAN').columns)
+            df = df.drop(columns=df.filter(like='KOTA').columns)
+            df = df.drop(columns=df.filter(like='NAMA KECAMATAN').columns)
+            
+            st.dataframe(df, hide_index=True, use_container_width=True)      
+        
+        with st.expander("Kominfo"):
+            url2 = f"https://e-prodeskel.kemendagri.go.id/api/d/{tahunterpilih}/data-integrasi-level/24?kode_daerah={kecterpilih5}"
+
+            # Fetch data based on selected code
+            tables = pd.read_html(url2)
+
+            df = tables[0]
+            
+            df = df.drop(columns=df.filter(like='STATUS PEMERITAHAN').columns)
+            df = df.drop(columns=df.filter(like='KOTA').columns)
+            df = df.drop(columns=df.filter(like='NAMA KECAMATAN').columns)
+            
+            st.dataframe(df, hide_index=True, use_container_width=True)     
+        
+        with st.expander("RT RW"):
+            url2 = f"https://e-prodeskel.kemendagri.go.id/api/d/{tahunterpilih}/data-integrasi-level/34?kode_daerah={kecterpilih5}"
+
+            # Fetch data based on selected code
+            tables = pd.read_html(url2)
+
+            df = tables[0]
+            
+            df = df.drop(columns=df.filter(like='STATUS PEMERITAHAN').columns)
+            df = df.drop(columns=df.filter(like='KOTA').columns)
+            df = df.drop(columns=df.filter(like='NAMA KECAMATAN').columns)
+            
+            st.dataframe(df, hide_index=True, use_container_width=True)  
+    
+        
+if __name__ == '__main__':
+    prodeskel()
+
+st.subheader('', divider='rainbow')
