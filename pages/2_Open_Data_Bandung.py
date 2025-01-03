@@ -103,6 +103,14 @@ st.success('Statistik sektoral adalah statistik yang pemanfaatannya ditujukan un
             kebutuhan instansi tertentu dalam rangka penyelenggaraan tugas-tugas pemerintahan \
                 dan pembangunan yang merupakan tugas pokok instansi yang bersangkutan.')
 
+st.warning('Kamus Besar Bahasa Indonesia (KBBI) menjelaskan bahwa indikator \
+merupakan sesuatu yang dapat memberikan petunjuk atau \
+keterangan. Indikator juga bisa diartikan sebagai setiap ciri, \
+karakteristik, atau ukuran yang bisa menunjukkan perubahan yang \
+terjadi pada sebuah bidang tertentu.')
+
+st.info('Suatu indikator biasanya diawali dengan kata Jumlah, Persentase, Proporsi, Rasio, Indeks, Angka, atau Tingkat')
+
 opd_terpilih = st.selectbox('Filter Produsen Data', opd)
 
 # Ekstrak data yang diperlukan
