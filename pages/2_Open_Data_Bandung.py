@@ -148,7 +148,17 @@ if opd_terpilih:
         st.markdown(iframe_code, unsafe_allow_html=True)
         st.caption(f'Sumber: https://sirusa.web.bps.go.id/metadata/site/search?SearchForm%5Bkategori%5D=&SearchForm%5Bkeyword%5D={opd_terpilih}+Kota+Bandung')
     
-    #st.divider()    
+    with st.expander(f'Daftar Rekomendasi Terbit {opd_terpilih} Kota Bandung'):
+        st.success(f'Rekomendasi {opd_terpilih} Kota Bandung')
+        # Embed URL in an iframe
+        iframe_code = f"""
+        <iframe src="https://romantik.web.bps.go.id/rekomendasi-terbit?search={opd_terpilih}+Kota+Bandung" width="100%" height="600" style="border:none;"></iframe>
+        """
+
+        st.markdown(iframe_code, unsafe_allow_html=True)
+        st.caption(f'Sumber: https://romantik.web.bps.go.id/rekomendasi-terbit?search={opd_terpilih}+Kota+Bandung')
+
+    st.subheader('', divider='green')    
     with st.expander(f'Contoh Metadata Statistik {opd_terpilih} di Pemerintah Daerah lain'):
         # Embed URL in an iframe
         iframe_code = f"""
@@ -174,11 +184,12 @@ with st.expander('BAHAN PEMBAHASAN FORUM SATU DATA UNTUK MENGIDENTIFIKASI KEGIAT
     st.success('Data-data tersebut dihasilkan dari Bidang?')
     st.warning('Data-data tersebut dihasilkan dari kegiatan apa (Nama Kegiatan Statistik, jika produsen data mengalami kesulitan dalam menentukan, bisa merujuk ke Sirusa atau Romantik.)?')
     st.info('Apakah kegiatan tersebut sudah meminta Rekomendasi Pembina Data?')
+    st.warning('Apakah sudah tersedia metadata (Kegiatan/MS-Keg, Indikator/MS-Ind, Variabel/MS-Var)?')
+    st.info('Apakah data tersebut dikemas dalam sebuah laporan dan dianalisis?')
     st.success('Adakah data publik lain yang dihasilkan selain Daftar Data di atas?')
     st.warning('Data mana saja yang termasuk Data Prioritas Daerah?')
     st.info('Data mana saja yang akan dihasilkan kembali di tahun depan?')
     st.success('Apakah data-data tersebut sudah mengacu pada Standar Data Statistik Nasional?')
-    st.warning('Apakah sudah tersedia metadata (Kegiatan/MS-Keg, Indikator/MS-Ind, Variabel/MS-Var)?')
     st.info('Data mana saja yang sudah mengacu pada Data Induk Kementerian/ Lembaga Pengampu?')
 
 st.divider()
