@@ -54,9 +54,9 @@ st.subheader("", divider='green')
 
 # Menambahkan widget Galichat
 chat_script = """
-<script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
-<script src="https://files.bpcontent.cloud/2025/01/04/03/20250104035620-PTG96A7D.js"></script>
+    <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/01/04/03/20250104035620-PTG96A7D.js"></script>
 """
 
 # Menyisipkan kode HTML ke dalam aplikasi Streamlit
-st.components.v1.html(chat_script, height=600)
+st.markdown(chat_script, unsafe_allow_html=True)
