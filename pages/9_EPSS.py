@@ -185,16 +185,3 @@ with st.expander('METADATA STATISTIK SEKTORAL KABUPATEN SUMEDANG'):
 st.divider()
 st.write('@Forum Satu Data Kota Bandung')
 
-st.success("Anda dapat bertanya tentang epss dengan menggunakan widget di bawah ini.")
-
-# Menambahkan widget Galichat
-chat_script = """
-<script
-  src="https://widget.galichat.com/gali-embeded.min.js" 
-  chat-hash="rlmgak3bta8qcma3e4p5rs" 
-  defer>
-</script>
-"""
-
-# Menyisipkan kode HTML ke dalam aplikasi Streamlit
-st.components.v1.html(chat_script, height=600)

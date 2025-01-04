@@ -49,3 +49,14 @@ st.write('25. Pedoman Penyelenggaraan Statistik Sektoral di Lingkungan Lembaga K
 st.write('26. Pedoman Penyelenggaraan Statistik Lingkungan Hidup dan Kehutanan')
 st.write('27. Panduan Operasional Penghimpunan dan Pengelolaan Metadata Kegiatan Statistik Sektoral/Khusus. \
     https://drive.google.com/file/d/13EmZR8Z9Tp3yEa71iTZKz-KSrE9bKtFr/view?usp=sharing')
+
+st.subheader("", divider='green')
+
+# Menambahkan widget Galichat
+chat_script = """
+<script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2025/01/04/03/20250104035620-PTG96A7D.js"></script>
+"""
+
+# Menyisipkan kode HTML ke dalam aplikasi Streamlit
+st.components.v1.html(chat_script, height=600)
