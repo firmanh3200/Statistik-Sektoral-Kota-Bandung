@@ -109,7 +109,8 @@ keterangan. Indikator juga bisa diartikan sebagai setiap ciri, \
 karakteristik, atau ukuran yang bisa menunjukkan perubahan yang \
 terjadi pada sebuah bidang tertentu.')
 
-st.info('Suatu indikator biasanya diawali dengan kata Jumlah, Persentase, Proporsi, Rasio, Indeks, Angka, atau Tingkat')
+st.info('Suatu indikator biasanya diawali dengan kata Jumlah, Persentase, Proporsi, Rasio, \
+    Rata-rata, Prevalensi, Indeks, Angka, atau Tingkat')
 
 opd_terpilih = st.selectbox('Filter Produsen Data', opd)
 

@@ -52,6 +52,19 @@ st.write('27. Panduan Operasional Penghimpunan dan Pengelolaan Metadata Kegiatan
 
 st.subheader("", divider='green')
 
+# Menambahkan CSS untuk memposisikan widget di tengah kanan
+st.markdown("""
+    <style>
+        #chatbot {
+            position: fixed;
+            right: 20px; /* Jarak dari kanan */
+            top: 50%; /* Posisi vertikal di tengah */
+            transform: translateY(-50%); /* Menggeser ke atas setengah tinggi elemen */
+            z-index: 9999; /* Pastikan di atas elemen lain */
+        }
+    </style>
+""", unsafe_allow_html=True)
+
 # Menambahkan widget Galichat
 chat_script = """
     <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
