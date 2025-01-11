@@ -95,6 +95,27 @@ with st.expander('Analisis Inferensia'):
                 cluster, dan diskriminan.')
     
 st.subheader('', divider='rainbow')
+
+with st.expander('CONTOH METADATA KOMPROMIN'):
+    st.success('Kompilasi Data Jumlah Siswa dan Guru Madrasah, \
+            Kementerian Agama, https://sirusa.web.bps.go.id/metadata/kegiatan/29871')
+    
+    st.info('Kompilasi Data Statistik Pekerjaan Umum dan Perumahan Rakyat, \
+            Kementerian Pekerjaan Umum dan Perumahan Rakyat, \
+                https://sirusa.web.bps.go.id/metadata/kegiatan/16713')
+    
+    st.warning('Kompilasi Data Dan Informasi Produk Perkebunan Unggulan, \
+            Kementerian Pertanian, https://sirusa.web.bps.go.id/metadata/kegiatan/16613')
+    
+    st.success('Kompilasi Data Pemuda Tani, Pusat Pendidikan Pertanian, Badan Penyuluhan \
+            dan Pengembangan SDM Pertanian, Kementerian Pertanian, \
+                https://sirusa.web.bps.go.id/metadata/kegiatan/16612')
+    
+    st.info('Kompilasi Data Petani Milenial, Pusat Pelatihan Pertanian Kementerian Pertanian, \
+            https://sirusa.web.bps.go.id/metadata/kegiatan/16625')
+    
+st.subheader('', divider='rainbow')
+
 with st.expander('Sistem Rujukan Statistik (SIRUSA)'):
     st.link_button("Metadata Statistik Sektoral", url="https://sirusa.bps.go.id/sirusa/index.php/sektoral/index")
 

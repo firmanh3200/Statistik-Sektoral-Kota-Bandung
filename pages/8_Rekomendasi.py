@@ -94,6 +94,17 @@ with st.expander(f'Contoh Permintaan Rekomendasi (Rancangan Kegiatan Statistik S
 
 st.subheader('', divider='rainbow')
 
+with st.expander('CONTOH REKOMENDASI ROMANTIK'):
+    st.success('Kompilasi Data Untuk Pengukuran Indikator Kinerja Pelaksanaan Anggaran (IKPA) Kementerian Negara/Lembaga Tahun 2025, \
+            Kementerian Keuangan, https://romantik.web.bps.go.id/rekomendasi-terbit/aDJ5Y2hGSGFUeVdrbGY0N1NFcEdFQT09')
+    
+with st.expander('CONTOH REKOMENDASI SURVEI'):
+    st.success('Survei Kesiapan Kementerian Hukum dan Ham dalam Proses Penyederhanaan dan Transformasi Jabatan Administrasi ke Jabatan Fungsional, \
+            Badan Penelitian dan Pengembangan Hukum dan Ham, \
+                https://romantik.bps.go.id/site/getmodalpencarian/?tipe=survei&pelabelan=Survei+Kesiapan+Kementerian+Hukum+dan+Ham+dalam+Proses+Penyederhanaan+dan+Transformasi+Jabatan+Administrasi+ke+Jabatan+Fungsional&kode=640&nama=Survei+Kesiapan+Kementerian+Hukum+dan+Ham+dalam+Proses+Penyederhanaan+dan+Transformasi+Jabatan+Administrasi+ke+Jabatan+Fungsional&_=1736561322189')
+
+st.subheader('', divider='rainbow')
+
 st.link_button('Cari Contoh Rancangan Kegiatan Lainnya', 'https://romantik.web.bps.go.id/rekomendasi-terbit')
 st.link_button('Ajukan Permohonan Rekomendasi', 'https://romantik.web.bps.go.id/')
 
